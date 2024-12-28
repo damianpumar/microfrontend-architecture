@@ -8,9 +8,7 @@ export default defineConfig(({ mode }) => {
 	const selfEnv = loadEnv(mode, process.cwd());
 	return {
 		server: {
-			fs: {
-				allow: ['.', '../shared'],
-			},
+			port: 3001,
 		},
 		build: {
 			target: 'chrome89',
@@ -25,10 +23,9 @@ export default defineConfig(({ mode }) => {
 			},
 			federation({
 				filename: 'remoteEntry.js',
-				name: 'remote',
+				name: 'store',
 				exposes: {
-					'./remote-app': './src/App.tsx',
-					'./state': './src/state',
+					'./store': './src/store',
 				},
 				shared: {
 					react: {

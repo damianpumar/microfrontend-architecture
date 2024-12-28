@@ -1,4 +1,4 @@
-import { useCounter } from 'remote/state';
+import { useCounter } from 'store/store';
 
 export default () => {
 	const [count, setCount] = useCounter();

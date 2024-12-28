@@ -19,6 +19,7 @@
 	"license": "ISC",
 	"devDependencies": {
 		"husky": "^8.0.0",
+		"kill-port": "^2.0.1",
 		"prettier": "^2.8.2"
 	}
 }
