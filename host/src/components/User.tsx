@@ -1,13 +1,12 @@
 //@ts-ignore
 import { useUser } from 'store/store';
-import './Header.css';
 
-const Header = () => {
+export default () => {
 	const [user, setUser] = useUser();
 
 	return (
-		<header>
-			<h1>Header</h1>
+		<>
+			{JSON.stringify(user)}
 
 			<button
 				onClick={() =>
@@ -22,8 +21,6 @@ const Header = () => {
 			>
 				Log in
 			</button>
-		</header>
+		</>
 	);
 };
-
-export default Header;

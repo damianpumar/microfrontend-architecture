@@ -13,9 +13,6 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
-      rxjs:
-        specifier: ^7.8.1
-        version: 7.8.1
     devDependencies:
       '@module-federation/vite':
         specifier: 1.1.9
@@ -564,9 +561,6 @@ packages:
     engines: { node: '>=18.0.0', npm: '>=8.0.0' }
     hasBin: true
 
-  rxjs@7.8.1:
-    resolution: { integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg== }
-
   scheduler@0.23.2:
     resolution: { integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ== }
 
@@ -585,9 +579,6 @@ packages:
   to-fast-properties@2.0.0:
     resolution: { integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog== }
     engines: { node: '>=4' }
-
-  tslib@2.7.0:
-    resolution: { integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA== }
 
   typescript@5.4.5:
     resolution: { integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ== }
@@ -1128,10 +1119,6 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.19.1
       fsevents: 2.3.3
 
-  rxjs@7.8.1:
-    dependencies:
-      tslib: 2.7.0
-
   scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
@@ -1145,8 +1132,6 @@ snapshots:
       has-flag: 3.0.0
 
   to-fast-properties@2.0.0: {}
-
-  tslib@2.7.0: {}
 
   typescript@5.4.5: {}
 

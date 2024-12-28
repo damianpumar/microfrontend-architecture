@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import './App.css';
-import Counter from './components/Counter';
+import User from './components/User';
 
 const Header = lazy(
 	// @ts-ignore
@@ -15,7 +15,7 @@ export default () => {
 					<Header />
 				</Suspense>
 
-				<Counter />
+				<User />
 			</div>
 		</>
 	);

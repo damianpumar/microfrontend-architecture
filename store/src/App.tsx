@@ -1,13 +1,31 @@
 import { useEffect } from 'react';
-import { useCounter } from './store';
+import { useUser } from './store';
 import './App.css';
 
 export default () => {
-	const [count, setCount] = useCounter();
+	const [user, setUser] = useUser();
 
 	useEffect(() => {
 		console.log('Store useEffect');
 	}, []);
 
-	return <button onClick={() => setCount(count + 1)}>Store Button</button>;
+	return (
+		<>
+			<button
+				onClick={() =>
+					setUser({
+						isLoggedIn: true,
+						user: {
+							name: 'John Doe',
+							email: 'john@doe',
+						},
+					})
+				}
+			>
+				Store Button
+			</button>
+
+			<div>{JSON.stringify(user)}</div>
+		</>
+	);
 };
