@@ -1,4 +1,3 @@
-//@ts-ignore
 import { useUser } from 'store/store';
 import './Header.css';
 
@@ -12,6 +11,7 @@ const Header = () => {
 			<button
 				onClick={() =>
 					setUser({
+						from: 'header',
 						isLoggedIn: true,
 						user: {
 							name: 'John Doe',

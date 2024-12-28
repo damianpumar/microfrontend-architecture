@@ -3,7 +3,8 @@ interface User {
 	email: string;
 }
 
-export interface State {
+interface State {
+	from: 'header' | 'host' | null;
 	isLoggedIn: boolean;
 	user: User | null;
 }

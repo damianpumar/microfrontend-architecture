@@ -1,4 +1,3 @@
-//@ts-ignore
 import { useUser } from 'store/store';
 
 export default () => {
@@ -11,6 +10,7 @@ export default () => {
 			<button
 				onClick={() =>
 					setUser({
+						from: 'host',
 						isLoggedIn: true,
 						user: {
 							name: 'John Doe',

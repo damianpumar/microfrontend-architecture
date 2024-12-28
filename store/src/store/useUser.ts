@@ -1,7 +1,7 @@
 import { atom, useAtom } from 'jotai';
-import { State } from 'src/@types';
 
 const user = atom<State>({
+	from: null,
 	isLoggedIn: false,
 	user: null,
 });
