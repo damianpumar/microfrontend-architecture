@@ -1,0 +1,24 @@
+{
+	"name": "react-microfrontend-demo",
+	"version": "1.0.0",
+	"description": "Vite + Module Federation is now possible",
+	"main": "index.js",
+	"scripts": {
+		"install:deps": "pnpm install && pnpm -r install",
+		"postinstall:deps": "pnpm run build",
+		"dev": "pnpm -r dev",
+		"build": "pnpm -r build",
+		"preview": "pnpm -r preview",
+		"prepare": "husky install"
+	},
+	"author": {
+		"name": "Damián Pumar",
+		"email": "pumar@duck.com",
+		"url": "https://github.com/damianpumar"
+	},
+	"license": "ISC",
+	"devDependencies": {
+		"husky": "^8.0.0",
+		"prettier": "^2.8.2"
+	}
+}
