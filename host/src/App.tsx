@@ -12,7 +12,7 @@ export default () => {
 		<>
 			<div className="host">
 				<div className="card">
-					<div className="icon">
+					<div>
 						<svg
 							enableBackground="new 0 0 512 512"
 							height="512px"

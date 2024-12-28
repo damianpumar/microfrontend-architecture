@@ -23,13 +23,13 @@
 			padding: 0.5rem 1rem;
 			color: rgb(24, 24, 24);
 		}
-	}
 
-	svg {
-		width: 100px;
-		height: 100px;
-		& path {
-			fill: #d2cec7;
+		svg {
+			width: 100px;
+			height: 100px;
+			& path {
+				fill: #d2cec7;
+			}
 		}
 	}
 }
