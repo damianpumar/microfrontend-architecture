@@ -14,6 +14,7 @@ export default () => {
 			<button
 				onClick={() =>
 					setUser({
+						from: 'app',
 						isLoggedIn: true,
 						user: {
 							name: 'John Doe',

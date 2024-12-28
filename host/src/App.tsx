@@ -1,22 +1,23 @@
-import { lazy, Suspense } from 'react';
-import './App.css';
-import User from './components/User';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const Header = lazy(
-	// @ts-ignore
-	async () => import('header/header'),
-);
+import { Auth, Front } from './pages';
+import { lazy, Suspense } from 'react';
+
+//@ts-ignore
+const Header = lazy(() => import('header/header'));
 
 export default () => {
 	return (
-		<>
-			<div className="container">
-				<Suspense fallback="loading...">
+		<Suspense fallback="Loading...">
+			<BrowserRouter>
+				<div className="app">
 					<Header />
-				</Suspense>
-
-				<User />
-			</div>
-		</>
+					<Routes>
+						<Route path="/" element={<Front />} />
+						<Route path="/auth" element={<Auth />} />
+					</Routes>
+				</div>
+			</BrowserRouter>
+		</Suspense>
 	);
 };

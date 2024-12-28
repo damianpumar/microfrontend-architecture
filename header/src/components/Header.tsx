@@ -1,27 +1,41 @@
-import { useUser } from 'store/store';
-import './Header.css';
+import styles from './Header.module.css';
+
+import { Link } from 'react-router-dom';
+import { useHeaderViewModel } from './useHeaderViewModel';
 
 const Header = () => {
-	const [user, setUser] = useUser();
+	const { isLoggedIn, userName, quantity } = useHeaderViewModel();
 
 	return (
-		<header>
-			<h1>Header</h1>
+		<header className={styles.header}>
+			<Link className={styles.link} to="/">
+				<div className={styles.brand}>
+					<img className={styles.logo} src="./favicon.png" width="40px" alt="codescouts-logo" />
+					<span
+						style={{
+							fontWeight: 'bold',
+							fontSize: '1.7rem',
+						}}
+					>
+						<span>{'<Code'}</span>
+						<span
+							style={{
+								color: '#ffe102',
+							}}
+						>
+							{'Scouts/>'}
+						</span>
+					</span>
+				</div>
+			</Link>
 
-			<button
-				onClick={() =>
-					setUser({
-						from: 'header',
-						isLoggedIn: true,
-						user: {
-							name: 'John Doe',
-							email: 'john@doe',
-						},
-					})
-				}
-			>
-				Log in
-			</button>
+			{!isLoggedIn ? (
+				<Link to="/auth">Log in</Link>
+			) : (
+				<Link to="/user">
+					{userName} ({quantity})
+				</Link>
+			)}
 		</header>
 	);
 };

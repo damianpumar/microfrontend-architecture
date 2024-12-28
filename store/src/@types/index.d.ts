@@ -4,7 +4,7 @@ interface User {
 }
 
 interface State {
-	from: 'header' | 'host' | null;
+	from: 'app' | 'header' | 'host' | null;
 	isLoggedIn: boolean;
 	user: User | null;
 }
