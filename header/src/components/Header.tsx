@@ -5,7 +5,7 @@ import { useHeaderViewModel } from './useHeaderViewModel';
 import { useImage } from 'src/utils/useImage';
 
 const Header = () => {
-	const logo = useImage('/favicon.png');
+	const logo = useImage('../assets/favicon.png');
 	const { logIn, user, cart } = useHeaderViewModel();
 
 	return (
