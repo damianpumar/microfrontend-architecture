@@ -16,7 +16,6 @@ const loadEnvs = (mode) => {
 };
 
 const getProcessVariable = (env) => {
-	debugger;
 	const project = process.cwd().split('/').pop();
 
 	const url = env[`VITE_${project.toUpperCase()}`];
@@ -31,7 +30,6 @@ const getProcessVariable = (env) => {
 export const defineCommonConfig = (mode) => {
 	const env = loadEnvs(mode);
 	const { port, url } = getProcessVariable(env);
-	debugger;
 
 	const base = {
 		resolve: {
