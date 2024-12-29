@@ -1,0 +1,9 @@
+[build]
+  command = "pnpm run build"
+  functions = "netlify/functions"
+  publish = "store/dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    access-control-allow-origin = "*"
