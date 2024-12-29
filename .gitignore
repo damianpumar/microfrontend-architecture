@@ -25,3 +25,5 @@ dist-ssr
 
 # Module federation temp files
 .__mf__temp
+# Local Netlify folder
+.netlify
