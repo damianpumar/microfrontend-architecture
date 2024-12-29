@@ -15,7 +15,9 @@ export const Front = () => {
 				{cookies.map((cookie) => (
 					<li key={cookie.id}>
 						<Suspense>
-							<Cookie cookie={cookie} />
+							<div className="border" data-component="cookie">
+								<Cookie cookie={cookie} />
+							</div>
 						</Suspense>
 					</li>
 				))}

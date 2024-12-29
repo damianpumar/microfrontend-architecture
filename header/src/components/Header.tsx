@@ -35,9 +35,18 @@ const Header = () => {
 				// <Link to="/auth">Log in</Link>
 				<button onClick={logIn}>Log in</button>
 			) : (
-				<Link to="/user">
-					{user.user?.name} ({cart.size})
-				</Link>
+				<div className="border" data-component="store">
+					<div
+						style={{
+							paddingLeft: '2px',
+							paddingRight: '2px',
+						}}
+					>
+						<Link to="/user" className={styles.link}>
+							{user.user?.name} ({cart.size})
+						</Link>
+					</div>
+				</div>
 			)}
 		</header>
 	);

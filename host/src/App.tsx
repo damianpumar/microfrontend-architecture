@@ -11,7 +11,9 @@ export default () => {
 		<Suspense fallback="Loading...">
 			<BrowserRouter>
 				<div className="app">
-					<Header />
+					<div className="border" data-component="header">
+						<Header />
+					</div>
 					<Routes>
 						<Route path="/" element={<Front />} />
 						<Route path="/auth" element={<Auth />} />

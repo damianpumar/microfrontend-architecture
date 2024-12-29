@@ -15,12 +15,19 @@ const Cookie = ({ cookie }: { cookie: Product }) => {
 			</span>
 			<span className={styles.title}>{cookie.title}</span>
 			<Toppings user={user.user} cookie={cookie} />
-			{user.isAdmin && (
-				<button type="button" onClick={() => addToCart(cookie)}>
-					{cookie.price} €
-				</button>
-			)}
-			{cart.contains(cookie) && <span className={styles.contains}>In your cart</span>}
+
+			<div className={styles.price}>
+				{user.isAdmin && (
+					<button type="button" onClick={() => addToCart(cookie)}>
+						{cookie.price} €
+					</button>
+				)}
+				{cart.contains(cookie) && (
+					<div className="border" data-component="store">
+						<span className={styles.contains}>In your cart</span>
+					</div>
+				)}
+			</div>
 		</article>
 	);
 };

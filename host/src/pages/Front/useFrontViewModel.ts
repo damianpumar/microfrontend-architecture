@@ -21,13 +21,13 @@ const cookies = [
 		id: '4',
 		title: 'Paraíso',
 		price: 180,
-		toppings: ['peanut'],
+		toppings: ['peanut', 'chocolate'],
 	},
 	{
 		id: '5',
 		title: 'Super Duper',
 		price: 290,
-		toppings: ['peanut', 'cherry', 'cocoa'],
+		toppings: ['peanut', 'cocoa'],
 	},
 	{
 		id: '6',

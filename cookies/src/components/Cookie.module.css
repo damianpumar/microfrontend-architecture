@@ -1,6 +1,5 @@
 .cookie {
 	display: block;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	padding: 10px;
 }
@@ -24,4 +23,12 @@
 
 .title {
 	font-weight: bold;
+}
+
+.price {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	gap: 5px;
 }

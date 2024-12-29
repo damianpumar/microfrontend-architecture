@@ -18,5 +18,15 @@ code {
 }
 
 .app {
-	padding: 80px 20px;
+	padding: 0 20px;
+}
+
+.border {
+	border: 1px dashed #000;
+	&::before {
+		content: attr(data-component);
+		background: #fff;
+		position: sticky;
+		margin-left: 2px;
+	}
 }
