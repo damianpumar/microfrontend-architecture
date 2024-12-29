@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
+import { BrowserRouter } from 'react-router-dom';
 
 export default () => {
 	useEffect(() => {
@@ -8,8 +9,10 @@ export default () => {
 	}, []);
 
 	return (
-		<div className="header">
-			<Header />
-		</div>
+		<BrowserRouter>
+			<div className="header">
+				<Header />
+			</div>
+		</BrowserRouter>
 	);
 };
