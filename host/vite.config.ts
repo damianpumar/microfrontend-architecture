@@ -14,8 +14,10 @@ export default defineConfig(() => ({
 		port: 3000,
 	},
 	preview: {
+		strictPort: true,
 		port: 3000,
 	},
+	base: 'http://localhost:3000',
 	build: {
 		target: 'chrome89',
 	},

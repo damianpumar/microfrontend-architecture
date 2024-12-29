@@ -4,7 +4,7 @@ import { useCookiesViewModel } from './useCookiesViewModel';
 import { useImage } from 'src/utils/useImage';
 
 const Cookie = ({ cookie }: { cookie: Product }) => {
-	const cookieImage = useImage('../assets/cookie.png');
+	const cookieImage = useImage('/cookie.png');
 
 	const { user, addToCart, cart } = useCookiesViewModel();
 

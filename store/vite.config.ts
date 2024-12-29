@@ -17,8 +17,10 @@ export default defineConfig(({ mode }) => {
 			port: 3001,
 		},
 		preview: {
+			strictPort: true,
 			port: 3001,
 		},
+		base: 'http://localhost:3001',
 		build: {
 			target: 'chrome89',
 		},
