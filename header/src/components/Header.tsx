@@ -2,15 +2,17 @@ import styles from './Header.module.css';
 
 import { Link } from 'react-router-dom';
 import { useHeaderViewModel } from './useHeaderViewModel';
+import { useImage } from 'src/utils/useImage';
 
 const Header = () => {
-	const { isLoggedIn, userName, quantity } = useHeaderViewModel();
+	const logo = useImage('/favicon.png');
+	const { logIn, user, cart } = useHeaderViewModel();
 
 	return (
 		<header className={styles.header}>
 			<Link className={styles.link} to="/">
 				<div className={styles.brand}>
-					<img className={styles.logo} src="./favicon.png" width="40px" alt="codescouts-logo" />
+					<img className={styles.logo} src={logo} width="40px" alt="codescouts-logo" />
 					<span
 						style={{
 							fontWeight: 'bold',
@@ -29,11 +31,12 @@ const Header = () => {
 				</div>
 			</Link>
 
-			{!isLoggedIn ? (
-				<Link to="/auth">Log in</Link>
+			{!user.isLoggedIn ? (
+				// <Link to="/auth">Log in</Link>
+				<button onClick={logIn}>Log in</button>
 			) : (
 				<Link to="/user">
-					{userName} ({quantity})
+					{user.user?.name} ({cart.size})
 				</Link>
 			)}
 		</header>

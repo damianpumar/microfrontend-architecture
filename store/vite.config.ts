@@ -7,6 +7,11 @@ import { dependencies } from './package.json';
 export default defineConfig(({ mode }) => {
 	const selfEnv = loadEnv(mode, process.cwd());
 	return {
+		resolve: {
+			alias: {
+				src: '/src',
+			},
+		},
 		server: {
 			port: 3001,
 		},

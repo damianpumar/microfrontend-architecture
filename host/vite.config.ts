@@ -4,6 +4,11 @@ import { defineConfig } from 'vite';
 import { dependencies } from './package.json';
 
 export default defineConfig(() => ({
+	resolve: {
+		alias: {
+			src: '/src',
+		},
+	},
 	server: {
 		port: 3000,
 	},
@@ -25,6 +30,13 @@ export default defineConfig(() => ({
 					type: 'module',
 					name: 'store',
 					entry: 'http://localhost:3001/remoteEntry.js',
+					entryGlobalName: 'remote',
+					shareScope: 'default',
+				},
+				cookie: {
+					type: 'module',
+					name: 'cookie',
+					entry: 'http://localhost:3003/remoteEntry.js',
 					entryGlobalName: 'remote',
 					shareScope: 'default',
 				},

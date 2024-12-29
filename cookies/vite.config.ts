@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
 			},
 		},
 		server: {
-			port: 3002,
+			port: 3003,
 		},
 		build: {
 			target: 'chrome89',
@@ -28,9 +28,9 @@ export default defineConfig(({ mode }) => {
 			},
 			federation({
 				filename: 'remoteEntry.js',
-				name: 'header',
+				name: 'store',
 				exposes: {
-					'./header': './src/components/Header.tsx',
+					'./cookie': './src/components/Cookie.tsx',
 				},
 				remotes: {
 					store: {
@@ -44,14 +44,6 @@ export default defineConfig(({ mode }) => {
 				shared: {
 					react: {
 						requiredVersion: dependencies.react,
-						singleton: true,
-					},
-					'react-dom': {
-						requiredVersion: dependencies['react-dom'],
-						singleton: true,
-					},
-					'react-router-dom': {
-						requiredVersion: dependencies['react-router-dom'],
 						singleton: true,
 					},
 				},

@@ -1,11 +1,26 @@
-import { useUser } from 'store/store';
+import { useCart, useUser } from 'store/store';
 
 export const useHeaderViewModel = () => {
-	const [user] = useUser();
+	const [user, setUser] = useUser();
+	const cart = useCart();
+
+	const logIn = () => {
+		setUser({
+			from: 'header',
+			isLoggedIn: true,
+			user: {
+				name: 'John Doe',
+				email: 'john@doe.com',
+				hasPreference: (ingredient) => ['chocolate', 'cocoa'].includes(ingredient),
+				hasAllergy: (ingredient) => ['peanut'].includes(ingredient),
+			},
+			isAdmin: true,
+		});
+	};
 
 	return {
-		userName: user.user?.name,
-		isLoggedIn: user.isLoggedIn,
-		quantity: 0,
+		logIn,
+		user,
+		cart,
 	};
 };

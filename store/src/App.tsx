@@ -19,7 +19,10 @@ export default () => {
 						user: {
 							name: 'John Doe',
 							email: 'john@doe',
+							hasPreference: (ingredient) => true,
+							hasAllergy: (ingredient) => false,
 						},
+						isAdmin: true,
 					})
 				}
 			>
