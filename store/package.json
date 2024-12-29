@@ -1,17 +1,17 @@
 {
-	"name": "react-microfrontend-host",
+	"name": "react-microfrontend-store",
 	"version": "0.0.0",
 	"type": "module",
+	"types": "./src/@types",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "npm run build && vite preview"
 	},
 	"dependencies": {
+		"jotai": "^2.11.0",
 		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"react-router-dom": "^6.28.1",
-		"react-microfrontend-store": "link:../store"
+		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
 		"@module-federation/vite": "1.1.9",

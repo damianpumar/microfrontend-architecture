@@ -1,5 +1,5 @@
 {
-	"name": "react-microfrontend-host",
+	"name": "react-microfrontend-header",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {

@@ -1,0 +1,34 @@
+.cookie {
+	display: block;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.image {
+	display: block;
+	font-size: 8em;
+	line-height: 1;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.cookie ul {
+	margin: 10px 0;
+}
+
+.contains {
+	padding-inline-start: 0.5rem;
+	color: hotpink;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.price {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	gap: 5px;
+}

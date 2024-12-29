@@ -1,0 +1,32 @@
+.header {
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-top: 5px;
+}
+
+.link {
+	text-decoration: none;
+	color: unset;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.logo {
+	animation: rotation 3s infinite forwards;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
