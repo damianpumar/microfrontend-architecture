@@ -2,20 +2,36 @@ import { loadEnv } from 'vite';
 import path from 'path';
 import { writeFileSync } from 'fs';
 
-const loadGlobalEnv = (mode) => {
+const loadEnvs = (mode) => {
 	const currentWorkingDir = process.cwd();
 	const parentDir = path.dirname(currentWorkingDir);
 
-	return loadEnv(mode, parentDir);
-};
-
-export const defineCommonConfig = (mode) => {
-	const globalEnv = loadGlobalEnv(mode);
+	const globalEnv = loadEnv(mode, parentDir);
 	const localEnv = loadEnv(mode, process.cwd());
-	const selfEnv = {
+
+	return {
 		...globalEnv,
 		...localEnv,
 	};
+};
+
+const getProcessVariable = (env) => {
+	debugger;
+	const project = process.cwd().split('/').pop();
+
+	const url = env[`VITE_${project.toUpperCase()}`];
+	const port = url.split(':').pop();
+
+	return {
+		port,
+		url,
+	};
+};
+
+export const defineCommonConfig = (mode) => {
+	const env = loadEnvs(mode);
+	const { port, url } = getProcessVariable(env);
+	debugger;
 
 	const base = {
 		resolve: {
@@ -25,13 +41,13 @@ export const defineCommonConfig = (mode) => {
 		},
 		server: {
 			strictPort: true,
-			port: selfEnv.VITE_PORT,
+			port,
 		},
 		preview: {
 			strictPort: true,
-			port: selfEnv.VITE_PORT,
+			port,
 		},
-		base: `http://localhost:${selfEnv.VITE_PORT}`,
+		base: url,
 		build: {
 			target: 'chrome89',
 		},
@@ -41,21 +57,21 @@ export const defineCommonConfig = (mode) => {
 		header: {
 			type: 'module',
 			name: 'header',
-			entry: `${selfEnv.VITE_HEADER}/remoteEntry.js`,
+			entry: `${env.VITE_HEADER}/remoteEntry.js`,
 			entryGlobalName: 'header',
 			shareScope: 'default',
 		},
 		store: {
 			type: 'module',
 			name: 'store',
-			entry: `${selfEnv.VITE_STORE}/remoteEntry.js`,
+			entry: `${env.VITE_STORE}/remoteEntry.js`,
 			entryGlobalName: 'remote',
 			shareScope: 'default',
 		},
 		cookie: {
 			type: 'module',
 			name: 'cookie',
-			entry: `${selfEnv.VITE_COOKIES}/remoteEntry.js`,
+			entry: `${env.VITE_COOKIE}/remoteEntry.js`,
 			entryGlobalName: 'remote',
 			shareScope: 'default',
 		},
@@ -65,13 +81,13 @@ export const defineCommonConfig = (mode) => {
 		{
 			name: 'generate-environment',
 			options: function () {
-				writeFileSync('./src/environment.ts', `export default ${JSON.stringify(selfEnv, null, 2)};`);
+				writeFileSync('./src/environment.ts', `export default ${JSON.stringify(env, null, 2)};`);
 			},
 		},
 	];
 
 	return {
-		selfEnv,
+		selfEnv: env,
 		base,
 		remotes,
 		plugins,
