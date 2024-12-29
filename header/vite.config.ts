@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
 			},
 		},
 		server: {
+			strictPort: true,
 			port: 3002,
 		},
 		preview: {
