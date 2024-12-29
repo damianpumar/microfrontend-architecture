@@ -15,6 +15,9 @@ export default defineConfig(({ mode }) => {
 		server: {
 			port: 3001,
 		},
+		preview: {
+			port: 3001,
+		},
 		build: {
 			target: 'chrome89',
 		},
@@ -22,7 +25,6 @@ export default defineConfig(({ mode }) => {
 			{
 				name: 'generate-environment',
 				options: function () {
-					console.info('selfEnv', selfEnv);
 					writeFileSync('./src/environment.ts', `export default ${JSON.stringify(selfEnv, null, 2)};`);
 				},
 			},
