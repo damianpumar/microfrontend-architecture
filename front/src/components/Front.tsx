@@ -9,7 +9,7 @@ const Front = () => {
 	const { cookies } = useFrontViewModel();
 
 	return (
-		<main>
+		<main className="border" data-component="front">
 			<h1>Cookies</h1>
 			<ul className={styles.list}>
 				{cookies.map((cookie) => (

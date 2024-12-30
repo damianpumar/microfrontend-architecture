@@ -9,7 +9,7 @@ const User = () => {
 	const { cart } = useUserViewModel();
 
 	return (
-		<main>
+		<main className="border" data-component="user">
 			<h1>In your cart</h1>
 			<ul className={styles.list}>
 				{cart.products.map((cookie) => (
