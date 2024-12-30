@@ -23,6 +23,7 @@ code {
 
 .border {
 	border: 1px dashed #000;
+	margin: 5px;
 	&::before {
 		content: attr(data-component);
 		background: #fff;
