@@ -1,7 +1,7 @@
 [build]
   command = "pnpm run build"
   functions = "netlify/functions"
-  publish = "header/dist"
+  publish = "pages/front/dist"
 
 [[headers]]
   for = "/*"

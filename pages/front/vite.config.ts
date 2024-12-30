@@ -4,7 +4,7 @@ import { federation } from '@module-federation/vite';
 import react from '@vitejs/plugin-react';
 
 import { dependencies } from './package.json';
-import { defineCommonConfig } from '../vite.config.common';
+import { defineCommonConfig } from '../../vite.config.common';
 
 export default defineConfig(({ mode }) => {
 	const { remotes, base } = defineCommonConfig(mode);
@@ -14,12 +14,12 @@ export default defineConfig(({ mode }) => {
 		plugins: [
 			federation({
 				filename: 'remoteEntry.js',
-				name: 'header',
+				name: 'front',
 				exposes: {
-					'./header': './src/components/Header.tsx',
+					'./front': './src/components/Front.tsx',
 				},
 				remotes: {
-					store: remotes.store,
+					cookie: remotes.cookie,
 				},
 				shared: {
 					react: {
@@ -28,10 +28,6 @@ export default defineConfig(({ mode }) => {
 					},
 					'react-dom': {
 						requiredVersion: dependencies['react-dom'],
-						singleton: true,
-					},
-					'react-router-dom': {
-						requiredVersion: dependencies['react-router-dom'],
 						singleton: true,
 					},
 				},

@@ -2,11 +2,19 @@ import { loadEnv } from 'vite';
 import path from 'path';
 import { writeFileSync } from 'fs';
 
-const loadEnvs = (mode) => {
-	const currentWorkingDir = process.cwd();
+const loadGlobalEnv = (mode, currentWorkingDir = process.cwd()) => {
 	const parentDir = path.dirname(currentWorkingDir);
 
 	const globalEnv = loadEnv(mode, parentDir);
+
+	debugger;
+	if (Object.keys(globalEnv).length > 1) return globalEnv;
+
+	return loadGlobalEnv(mode, parentDir);
+};
+
+const loadEnvs = (mode) => {
+	const globalEnv = loadGlobalEnv(mode);
 	const localEnv = loadEnv(mode, process.cwd());
 
 	return {
@@ -17,6 +25,7 @@ const loadEnvs = (mode) => {
 
 const getProcessVariable = (env) => {
 	const project = process.cwd().split('/').pop();
+	debugger;
 
 	const url = env[`VITE_${project.toUpperCase()}`];
 	const port = url.split(':').pop();
