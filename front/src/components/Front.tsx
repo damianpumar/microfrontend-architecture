@@ -5,7 +5,7 @@ import { useFrontViewModel } from './useFrontViewModel';
 //@ts-ignore
 const Cookie = lazy(() => import('cookie/cookie'));
 
-export const Front = () => {
+const Front = () => {
 	const { cookies } = useFrontViewModel();
 
 	return (
@@ -25,3 +25,5 @@ export const Front = () => {
 		</main>
 	);
 };
+
+export default Front;

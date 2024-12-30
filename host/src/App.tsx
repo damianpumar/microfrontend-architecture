@@ -1,10 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { Auth, Front } from './pages';
 import { lazy, Suspense } from 'react';
 
 //@ts-ignore
 const Header = lazy(() => import('header/header'));
+//@ts-ignore
+const Front = lazy(() => import('front/front'));
+//@ts-ignore
+const User = lazy(() => import('user/user'));
 
 export default () => {
 	return (
@@ -16,7 +19,7 @@ export default () => {
 					</div>
 					<Routes>
 						<Route path="/" element={<Front />} />
-						<Route path="/auth" element={<Auth />} />
+						<Route path="/user" element={<User />} />
 					</Routes>
 				</div>
 			</BrowserRouter>

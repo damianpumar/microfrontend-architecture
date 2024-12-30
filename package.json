@@ -6,9 +6,9 @@
 	"scripts": {
 		"install:deps": "pnpm install && pnpm -r install",
 		"postinstall:deps": "pnpm run build",
-		"dev": "pnpm -r dev",
-		"build": "pnpm -r build",
-		"preview": "pnpm -r preview",
+		"dev": "pnpm -r --workspace-concurrency=10 dev",
+		"build": "pnpm -r --workspace-concurrency=10 build",
+		"preview": "pnpm -r --workspace-concurrency=10 preview",
 		"prepare": "husky install"
 	},
 	"author": {

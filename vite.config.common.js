@@ -73,6 +73,20 @@ export const defineCommonConfig = (mode) => {
 			entryGlobalName: 'remote',
 			shareScope: 'default',
 		},
+		front: {
+			type: 'module',
+			name: 'front',
+			entry: `${env.VITE_FRONT}/remoteEntry.js`,
+			entryGlobalName: 'remote',
+			shareScope: 'default',
+		},
+		user: {
+			type: 'module',
+			name: 'user',
+			entry: `${env.VITE_USER}/remoteEntry.js`,
+			entryGlobalName: 'remote',
+			shareScope: 'default',
+		},
 	};
 
 	const plugins = [

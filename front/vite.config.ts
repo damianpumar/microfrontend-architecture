@@ -14,12 +14,12 @@ export default defineConfig(({ mode }) => {
 		plugins: [
 			federation({
 				filename: 'remoteEntry.js',
-				name: 'host',
+				name: 'front',
+				exposes: {
+					'./front': './src/components/Front.tsx',
+				},
 				remotes: {
-					store: remotes.store,
-					header: remotes.header,
-					front: remotes.front,
-					user: remotes.user,
+					cookie: remotes.cookie,
 				},
 				shared: {
 					react: {
@@ -28,10 +28,6 @@ export default defineConfig(({ mode }) => {
 					},
 					'react-dom': {
 						requiredVersion: dependencies['react-dom'],
-						singleton: true,
-					},
-					'react-router-dom': {
-						requiredVersion: dependencies['react-router-dom'],
 						singleton: true,
 					},
 				},

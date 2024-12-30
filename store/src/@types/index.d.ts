@@ -13,6 +13,7 @@ interface UserState {
 }
 
 interface CartState {
+	products: Product[];
 	size: number;
 	contains: (product: Product) => boolean;
 	add: (product: Product) => void;

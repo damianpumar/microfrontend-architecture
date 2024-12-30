@@ -6,6 +6,7 @@ export const useCart = (): CartState => {
 	const [products, setProducts] = useAtom(productsAtom);
 
 	return {
+		products,
 		size: products.length,
 		contains: (product: Product) => products.includes(product),
 		add: (product: Product) => {
