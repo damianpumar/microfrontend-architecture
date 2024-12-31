@@ -3,8 +3,8 @@ import { federation } from '@module-federation/vite';
 
 import react from '@vitejs/plugin-react';
 
-import { dependencies } from './package.json';
-import { defineCommonConfig } from 'react-microfrontend-common';
+import packageJson from './package.json' assert { type: 'json' };
+import { defineCommonConfig } from 'react-microfrontend-common/vite';
 
 export default defineConfig(({ mode }) => {
 	const { remotes, base } = defineCommonConfig(mode);
@@ -24,11 +24,11 @@ export default defineConfig(({ mode }) => {
 				},
 				shared: {
 					react: {
-						requiredVersion: dependencies.react,
+						requiredVersion: packageJson.dependencies.react,
 						singleton: true,
 					},
 					'react-dom': {
-						requiredVersion: dependencies['react-dom'],
+						requiredVersion: packageJson.dependencies['react-dom'],
 						singleton: true,
 					},
 				},

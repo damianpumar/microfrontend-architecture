@@ -1,9 +1,7 @@
 {
-	"name": "react-microfrontend-common",
+	"name": "react-micro-frontend-common",
 	"version": "0.0.0",
 	"type": "module",
-	"main": "./dist/common",
-	"types": "./src/common",
 	"scripts": {
 		"build": "tsc"
 	},
@@ -11,5 +9,18 @@
 		"@types/node": "^22.10.2",
 		"typescript": "5.4.5",
 		"vite": "5.2.10"
+	},
+	"exports": {
+		"./vite": {
+			"types": "./dist/vite.d.ts",
+			"import": "./dist/vite.js"
+		}
+	},
+	"typesVersions": {
+		"*": {
+			"types": [
+				"./dist/vite.d.ts"
+			]
+		}
 	}
 }
