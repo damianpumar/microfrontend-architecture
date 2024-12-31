@@ -2,18 +2,17 @@ import { loadEnv } from 'vite';
 import path from 'path';
 import { writeFileSync } from 'fs';
 
-const loadGlobalEnv = (mode, currentWorkingDir = process.cwd()) => {
+const loadGlobalEnv = (mode: string, currentWorkingDir = process.cwd()): Record<string, string> => {
 	const parentDir = path.dirname(currentWorkingDir);
 
 	const globalEnv = loadEnv(mode, parentDir);
 
-	debugger;
 	if (Object.keys(globalEnv).length > 1) return globalEnv;
 
 	return loadGlobalEnv(mode, parentDir);
 };
 
-const loadEnvs = (mode) => {
+const loadEnvs = (mode: string) => {
 	const globalEnv = loadGlobalEnv(mode);
 	const localEnv = loadEnv(mode, process.cwd());
 
@@ -23,20 +22,19 @@ const loadEnvs = (mode) => {
 	};
 };
 
-const getProcessVariable = (env) => {
+const getProcessVariable = (env: Record<string, string>) => {
 	const project = process.cwd().split('/').pop();
-	debugger;
 
-	const url = env[`VITE_${project.toUpperCase()}`];
+	const url = env[`VITE_${project?.toUpperCase()}`];
 	const port = url.split(':').pop();
 
 	return {
-		port,
+		port: parseInt(port ?? '0'),
 		url,
 	};
 };
 
-export const defineCommonConfig = (mode) => {
+export const defineCommonConfig = (mode: string) => {
 	const env = loadEnvs(mode);
 	const { port, url } = getProcessVariable(env);
 

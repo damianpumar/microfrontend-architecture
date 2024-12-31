@@ -1,0 +1,15 @@
+{
+	"name": "react-microfrontend-common",
+	"version": "0.0.0",
+	"type": "module",
+	"main": "./dist/common",
+	"types": "./src/common",
+	"scripts": {
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.2",
+		"typescript": "5.4.5",
+		"vite": "5.2.10"
+	}
+}
