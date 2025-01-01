@@ -4,6 +4,5 @@
 		"module": "NodeNext",
 		"moduleResolution": "nodenext",
 		"allowSyntheticDefaultImports": true
-	},
-	"include": ["vite.config.ts", "module-federation/vite-importmap-shim.ts"]
+	}
 }

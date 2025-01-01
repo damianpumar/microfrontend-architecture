@@ -13,7 +13,6 @@
 		"moduleResolution": "nodenext",
 		"baseUrl": ".",
 		"declaration": true,
-		"emitDeclarationOnly": true,
 		"outDir": "./dist"
 	},
 	"include": ["src"],
