@@ -6,7 +6,9 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"preview": "npm run build && vite preview"
+		"preview": "npm run build && vite preview",
+		"predeploy": "npm run build",
+		"deploy": "netlify deploy --prod"
 	},
 	"dependencies": {
 		"jotai": "^2.11.0",

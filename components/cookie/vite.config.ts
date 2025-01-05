@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
 		plugins: [
 			federation({
 				filename: 'remoteEntry.js',
-				name: 'store',
+				name: 'cookie',
 				exposes: {
 					'./cookie': './src/components/Cookie.tsx',
 				},

@@ -8,6 +8,7 @@
 		"predev": "pnpm --filter react-micro-frontend-common build",
 		"dev": "pnpm -r --workspace-concurrency=10 dev",
 		"build": "pnpm -r --workspace-concurrency=10 build",
+		"deploy": "pnpm -r --workspace-concurrency=10 deploy",
 		"preview": "pnpm -r --workspace-concurrency=10 preview",
 		"prepare": "husky install"
 	},
