@@ -21,8 +21,14 @@ code {
 	padding: 0 20px;
 }
 
+.noBorder {
+	border: none;
+	&::before {
+		content: none;
+	}
+}
 .border {
-	border: 1px dashed #000;
+	border: 2px dashed #000;
 	margin: 5px;
 	&::before {
 		content: attr(data-component);
@@ -30,4 +36,20 @@ code {
 		position: sticky;
 		margin-left: 2px;
 	}
+}
+
+.border-cookie {
+	border-color: blue;
+}
+.border-header {
+	border-color: aqua;
+}
+.border-front {
+	border-color: deeppink;
+}
+.border-user {
+	border-color: orange;
+}
+.border-store {
+	border-color: darkmagenta;
 }

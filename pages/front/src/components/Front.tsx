@@ -9,13 +9,13 @@ const Front = () => {
 	const { cookies } = useFrontViewModel();
 
 	return (
-		<main className="border" data-component="front">
+		<main className="noBorder border-front" data-component={`front - ${import.meta.env.VITE_FRONT}`}>
 			<h1>Cookies</h1>
 			<ul className={styles.list}>
 				{cookies.map((cookie) => (
 					<li key={cookie.id}>
 						<Suspense>
-							<div className="border" data-component="cookie">
+							<div className="noBorder border-cookie" data-component={`cookie - ${import.meta.env.VITE_COOKIE}`}>
 								<Cookie cookie={cookie} />
 							</div>
 						</Suspense>

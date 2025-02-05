@@ -23,7 +23,7 @@ const Cookie = ({ cookie }: { cookie: Product }) => {
 					</button>
 				)}
 				{cart.contains(cookie) && (
-					<div className="border" data-component="store">
+					<div className="noBorder border-store" data-component="store">
 						<span className={styles.contains}>In your cart</span>
 					</div>
 				)}

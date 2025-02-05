@@ -35,7 +35,7 @@ const Header = () => {
 				// <Link to="/auth">Log in</Link>
 				<button onClick={logIn}>Log in</button>
 			) : (
-				<div className="border" data-component="store">
+				<div className="noBorder border-store" data-component="store">
 					<div
 						style={{
 							paddingLeft: '2px',

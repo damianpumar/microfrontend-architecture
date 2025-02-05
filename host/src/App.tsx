@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { lazy, Suspense } from 'react';
 
+import { ShowUrl } from 'src/ShowUrl';
+
 //@ts-ignore
 const Header = lazy(() => import('header/header'));
 //@ts-ignore
@@ -14,9 +16,11 @@ export default () => {
 		<Suspense fallback="Loading...">
 			<BrowserRouter>
 				<div className="app">
-					<div className="border" data-component="header">
+					<ShowUrl />
+					<div className="noBorder border-header" data-component={`header - ${import.meta.env.VITE_HEADER}`}>
 						<Header />
 					</div>
+
 					<Routes>
 						<Route path="/" element={<Front />} />
 						<Route path="/user" element={<User />} />

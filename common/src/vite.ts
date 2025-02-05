@@ -16,10 +16,14 @@ const loadEnvs = (mode: string) => {
 	const globalEnv = loadGlobalEnv(mode);
 	const localEnv = loadEnv(mode, process.cwd());
 
-	return {
+	const env = {
 		...globalEnv,
 		...localEnv,
 	};
+
+	Object.assign(process.env, env);
+
+	return env;
 };
 
 const getProcessVariable = (env: Record<string, string>) => {
