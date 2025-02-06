@@ -13,7 +13,13 @@ const User = lazy(() => import('user/user'));
 
 export default () => {
 	return (
-		<Suspense fallback="Loading...">
+		<Suspense
+			fallback={
+				<div className="loading">
+					<img src="/favicon.png" />
+				</div>
+			}
+		>
 			<BrowserRouter>
 				<div className="app">
 					<ShowUrl />
