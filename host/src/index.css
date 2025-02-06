@@ -32,8 +32,6 @@ code {
 	margin: 5px;
 	&::before {
 		content: attr(data-component);
-		background: #fff;
-		position: sticky;
 		margin-left: 2px;
 	}
 }

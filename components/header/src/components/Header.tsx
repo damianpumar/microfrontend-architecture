@@ -32,8 +32,9 @@ const Header = () => {
 			</Link>
 
 			{!user.isLoggedIn ? (
-				// <Link to="/auth">Log in</Link>
-				<button onClick={logIn}>Log in</button>
+				<button className={styles.button} onClick={logIn}>
+					Log in
+				</button>
 			) : (
 				<div className="noBorder border-store" data-component="store">
 					<div
