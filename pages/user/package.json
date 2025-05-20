@@ -12,10 +12,10 @@
 	"dependencies": {
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-microfrontend-store": "link:../store"
+		"react-microfrontend-store": "link:../../store"
 	},
 	"devDependencies": {
-		"react-microfrontend-common": "link:../common",
+		"react-microfrontend-common": "link:../../common",
 		"@module-federation/vite": "1.1.9",
 		"@types/react": "18.2.79",
 		"@types/react-dom": "18.2.25",

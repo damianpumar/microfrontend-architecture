@@ -14,7 +14,7 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-microfrontend-store:
-        specifier: link:../store
+        specifier: link:../../store
         version: link:../../store
       react-router-dom:
         specifier: ^6.28.1
@@ -33,7 +33,7 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(vite@5.2.10(@types/node@18.19.42))
       react-microfrontend-common:
-        specifier: link:../common
+        specifier: link:../../common
         version: link:../../common
       typescript:
         specifier: 5.4.5

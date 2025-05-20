@@ -4,9 +4,9 @@
 	"description": "Vite + Module Federation is now possible",
 	"scripts": {
 		"install:deps": "pnpm install && pnpm -r install",
-		"postinstall:deps": "pnpm run build",
 		"predev": "pnpm --filter react-micro-frontend-common build",
 		"dev": "pnpm -r --workspace-concurrency=10 dev",
+		"prebuild": "pnpm --filter react-micro-frontend-common build",
 		"build": "pnpm -r --workspace-concurrency=10 build",
 		"deploy": "pnpm -r --workspace-concurrency=10 deploy",
 		"preview": "pnpm -r --workspace-concurrency=10 preview",
