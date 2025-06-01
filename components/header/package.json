@@ -18,7 +18,7 @@
 	"devDependencies": {
 		"react-microfrontend-common": "link:../../common",
 		"@module-federation/vite": "1.1.9",
-		"@types/react": "18.2.79",
+		"@types/react": "18.3.23",
 		"@types/react-dom": "18.2.25",
 		"@vitejs/plugin-react": "4.2.1",
 		"typescript": "5.4.5",
