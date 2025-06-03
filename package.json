@@ -1,9 +1,10 @@
 {
-	"name": "react-microfrontend-demo",
+	"name": "react-microfrontend",
 	"version": "1.0.0",
 	"description": "Vite + Module Federation is now possible",
 	"scripts": {
 		"install:deps": "pnpm install && pnpm -r install",
+		"clean": "./clean.js",
 		"predev": "pnpm --filter react-micro-frontend-common build",
 		"dev": "pnpm -r --workspace-concurrency=10 dev",
 		"prebuild": "pnpm --filter react-micro-frontend-common build",
