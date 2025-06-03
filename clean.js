@@ -1,24 +1,30 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const foldersToClean = ['node_modules', 'dist'];
-
-foldersToClean.forEach((folder) => {
-	const folderPath = path.resolve(process.cwd(), folder);
-	if (fs.existsSync(folderPath)) {
-		console.log(`Removing ${folderPath}...`);
-		try {
-			execSync(process.platform === 'win32' ? `rmdir /s /q "${folderPath}"` : `rm -rf "${folderPath}"`, { stdio: 'inherit' });
-			console.log(`✔ ${folder} removed.`);
-		} catch (err) {
-			console.error(`✘ Error removing ${folder}:`, err.message);
+const deleteNodeModules = (dir, folder) => {
+	fs.readdirSync(dir, { withFileTypes: true }).forEach((entry) => {
+		const fullPath = path.join(dir, entry.name);
+		if (entry.isDirectory()) {
+			if (entry.name === folder) {
+				try {
+					fs.rmSync(fullPath, { recursive: true, force: true });
+				} catch {}
+			} else {
+				deleteNodeModules(fullPath, folder);
+			}
 		}
-	} else {
-		console.log(`⚠ ${folder} not found, nothing to remove.`);
-	}
+	});
+};
+
+const rootDir = process.cwd();
+const deleteAll = (folder) => {
+	deleteNodeModules(rootDir, folder);
+};
+
+['node_modules', 'dist'].forEach((folder) => {
+	deleteAll(folder);
 });
 
-console.log('🧹 Project cleaned up!');
+console.log('🧹 Cleanup completed!');
