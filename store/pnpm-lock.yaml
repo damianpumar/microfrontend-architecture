@@ -29,15 +29,15 @@ importers:
       '@vitejs/plugin-react':
         specifier: 4.2.1
         version: 4.2.1(vite@5.2.10(@types/node@18.19.42))
-      react-microfrontend-common:
-        specifier: link:../common
-        version: link:../common
       typescript:
         specifier: 5.4.5
         version: 5.4.5
       vite:
         specifier: 5.2.10
         version: 5.2.10(@types/node@18.19.42)
+      vite-microfrontend:
+        specifier: 0.0.0
+        version: 0.0.0
 
 packages:
   '@ampproject/remapping@2.3.0':
@@ -612,6 +612,9 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
+  vite-microfrontend@0.0.0:
+    resolution: { integrity: sha512-u3yp6YR6127fFbIv3fOzlNJudTx4EVI2Qc7RAY1TC5Fc1KZyog35EfYi0TC4PqkmFPSaJ8r4UemhhocGaZpMrg== }
+
   vite@5.2.10:
     resolution: { integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw== }
     engines: { node: ^18.0.0 || >=20.0.0 }
@@ -1166,6 +1169,8 @@ snapshots:
       browserslist: 4.23.2
       escalade: 3.1.2
       picocolors: 1.0.1
+
+  vite-microfrontend@0.0.0: {}
 
   vite@5.2.10(@types/node@18.19.42):
     dependencies:
