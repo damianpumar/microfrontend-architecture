@@ -38,6 +38,16 @@ const getProcessVariable = (env: Record<string, string>) => {
 	};
 };
 
+const createRemoteEntry = (name: string, entry: string) => {
+	return {
+		type: 'module',
+		name,
+		entry: `${entry}/remoteEntry.js`,
+		entryGlobalName: name,
+		shareScope: 'default',
+	};
+};
+
 export const defineCommonConfig = (mode: string) => {
 	const env = loadEnvs(mode);
 	const { port, url } = getProcessVariable(env);
@@ -62,43 +72,20 @@ export const defineCommonConfig = (mode: string) => {
 		},
 	};
 
-	const remotes = {
-		header: {
-			type: 'module',
-			name: 'header',
-			entry: `${env.VITE_HEADER}/remoteEntry.js`,
-			entryGlobalName: 'header',
-			shareScope: 'default',
-		},
-		store: {
-			type: 'module',
-			name: 'store',
-			entry: `${env.VITE_STORE}/remoteEntry.js`,
-			entryGlobalName: 'remote',
-			shareScope: 'default',
-		},
-		cookie: {
-			type: 'module',
-			name: 'cookie',
-			entry: `${env.VITE_COOKIE}/remoteEntry.js`,
-			entryGlobalName: 'remote',
-			shareScope: 'default',
-		},
-		front: {
-			type: 'module',
-			name: 'front',
-			entry: `${env.VITE_FRONT}/remoteEntry.js`,
-			entryGlobalName: 'remote',
-			shareScope: 'default',
-		},
-		user: {
-			type: 'module',
-			name: 'user',
-			entry: `${env.VITE_USER}/remoteEntry.js`,
-			entryGlobalName: 'remote',
-			shareScope: 'default',
-		},
-	};
+	const excluded = ['VITE_MODE', 'VITE_PORT'];
+
+	const keys = Object.keys(env)
+		.filter((key) => key.startsWith('VITE_') && !excluded.includes(key))
+		.map((k) => ({
+			name: k.replace('VITE_', '').toLowerCase(),
+			env: env[k],
+		}));
+
+	const remotes = keys.reduce((acc, key) => {
+		acc[key.name] = createRemoteEntry(key.name, key.env);
+
+		return acc;
+	}, {} as any);
 
 	const plugins = [
 		{
