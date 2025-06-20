@@ -109,7 +109,7 @@ export const defineCommonConfig = (mode: string) => {
 export interface Config {
 	mode: string;
 	name: string;
-	exposes: Record<string, string>;
+	exposes?: Record<string, string>;
 	filename?: string;
 	shared?: Record<string, any>;
 	remotes?: Record<string, any>;

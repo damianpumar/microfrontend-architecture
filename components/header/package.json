@@ -16,7 +16,7 @@
 		"react-microfrontend-store": "link:../../store"
 	},
 	"devDependencies": {
-		"vite-microfrontend": "0.0.2",
+		"vite-microfrontend": "0.0.4",
 		"@module-federation/vite": "1.1.9",
 		"@types/react": "18.2.79",
 		"@types/react-dom": "18.2.25",
