@@ -39,8 +39,8 @@ importers:
         specifier: 5.2.10
         version: 5.2.10(@types/node@18.19.42)
       vite-microfrontend:
-        specifier: 0.0.0
-        version: 0.0.0
+        specifier: 0.0.2
+        version: 0.0.2(@types/node@18.19.42)(rollup@4.19.1)
 
 packages:
   '@ampproject/remapping@2.3.0':
@@ -620,8 +620,8 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  vite-microfrontend@0.0.0:
-    resolution: { integrity: sha512-u3yp6YR6127fFbIv3fOzlNJudTx4EVI2Qc7RAY1TC5Fc1KZyog35EfYi0TC4PqkmFPSaJ8r4UemhhocGaZpMrg== }
+  vite-microfrontend@0.0.2:
+    resolution: { integrity: sha512-hNLLcmkSM36kk8Jtdcp/ZgfE0zCfIdEFtJAwX3YXE3oWzw8mZ3tlQe9CZYrqpxRZt06T8/K6PSEGDQWOp7UwZQ== }
 
   vite@5.2.10:
     resolution: { integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw== }
@@ -1187,7 +1187,19 @@ snapshots:
       escalade: 3.1.2
       picocolors: 1.0.1
 
-  vite-microfrontend@0.0.0: {}
+  vite-microfrontend@0.0.2(@types/node@18.19.42)(rollup@4.19.1):
+    dependencies:
+      '@module-federation/vite': 1.1.9(rollup@4.19.1)
+      vite: 5.2.10(@types/node@18.19.42)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - rollup
+      - sass
+      - stylus
+      - sugarss
+      - terser
 
   vite@5.2.10(@types/node@18.19.42):
     dependencies:

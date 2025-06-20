@@ -1,6 +1,8 @@
+import { federation as moduleFederation } from '@module-federation/vite';
 import { loadEnv } from 'vite';
 import path from 'path';
-import { writeFileSync } from 'fs';
+import { fsync, read, writeFileSync } from 'fs';
+import fs from 'node:fs';
 
 const loadGlobalEnv = (mode: string, currentWorkingDir = process.cwd()): Record<string, string> => {
 	const parentDir = path.dirname(currentWorkingDir);
@@ -102,4 +104,48 @@ export const defineCommonConfig = (mode: string) => {
 		remotes,
 		plugins,
 	};
+};
+
+export interface Config {
+	mode: string;
+	name: string;
+	exposes: Record<string, string>;
+	filename?: string;
+	shared?: Record<string, any>;
+	remotes?: Record<string, any>;
+}
+
+const readPackageJson = () => {
+	try {
+		const filePath = path.join(process.cwd(), 'package.json');
+
+		const data = fs.readFileSync(filePath, 'utf8');
+		return JSON.parse(data);
+	} catch {
+		return {};
+	}
+};
+const readSharedDependencies = () => {
+	const packageJson = readPackageJson();
+
+	return Object.keys(packageJson.dependencies).reduce((acc, dependency) => {
+		acc[dependency] = {
+			requiredVersion: packageJson.dependencies[dependency],
+			singleton: true,
+		};
+		return acc;
+	}, {} as any);
+};
+
+export const federation = (config: Config) => {
+	const { mode } = config;
+	const { remotes } = defineCommonConfig(mode);
+	const shared = readSharedDependencies();
+
+	return moduleFederation({
+		filename: 'remoteEntry.js',
+		remotes,
+		shared,
+		...config,
+	});
 };
