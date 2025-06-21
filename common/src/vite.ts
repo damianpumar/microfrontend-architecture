@@ -1,8 +1,10 @@
 import { federation as moduleFederation } from '@module-federation/vite';
-import { loadEnv } from 'vite';
+import { defineConfig as DC, loadEnv, PluginOption, UserConfig, UserConfigFnObject } from 'vite';
 import path from 'path';
-import { fsync, read, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import fs from 'node:fs';
+
+const REMOTE_ENTRY = 'remoteEntry.js';
 
 const loadGlobalEnv = (mode: string, currentWorkingDir = process.cwd()): Record<string, string> => {
 	const parentDir = path.dirname(currentWorkingDir);
@@ -44,7 +46,7 @@ const createRemoteEntry = (name: string, entry: string) => {
 	return {
 		type: 'module',
 		name,
-		entry: `${entry}/remoteEntry.js`,
+		entry: `${entry}/${REMOTE_ENTRY}`,
 		entryGlobalName: name,
 		shareScope: 'default',
 	};
@@ -107,7 +109,6 @@ export const defineCommonConfig = (mode: string) => {
 };
 
 export interface Config {
-	mode: string;
 	name: string;
 	exposes?: Record<string, string>;
 	filename?: string;
@@ -125,6 +126,7 @@ const readPackageJson = () => {
 		return {};
 	}
 };
+
 const readSharedDependencies = () => {
 	const packageJson = readPackageJson();
 
@@ -137,15 +139,38 @@ const readSharedDependencies = () => {
 	}, {} as any);
 };
 
-export const federation = (config: Config) => {
-	const { mode } = config;
-	const { remotes } = defineCommonConfig(mode);
+export const federation = (config: Config): PluginOption[] => {
 	const shared = readSharedDependencies();
 
 	return moduleFederation({
-		filename: 'remoteEntry.js',
-		remotes,
+		filename: REMOTE_ENTRY,
 		shared,
 		...config,
 	});
 };
+
+export interface MfConfig extends UserConfig {
+	federation: Config;
+}
+export interface MfConfigExport extends UserConfigFnObject {}
+
+export function defineConfig(customConfig: MfConfig): MfConfigExport {
+	return DC(({ mode }) => {
+		const { remotes, base } = defineCommonConfig(mode);
+		const { plugins: customPlugins, ...config } = customConfig;
+
+		const plugins: PluginOption[] = [
+			federation({
+				...customConfig.federation,
+				remotes,
+			}),
+			...(customPlugins ?? []),
+		];
+
+		return {
+			...base,
+			...config,
+			plugins,
+		};
+	});
+}

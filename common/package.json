@@ -1,6 +1,6 @@
 {
 	"name": "vite-microfrontend",
-	"version": "0.0.4",
+	"version": "0.0.8",
 	"type": "module",
 	"scripts": {
 		"build": "tsc"
@@ -10,8 +10,12 @@
 		"vite": "5.2.10"
 	},
 	"devDependencies": {
-		"@types/node": "^22.10.2",
+		"@types/node": "22.10.2",
 		"typescript": "5.4.5"
+	},
+	"peerDependencies": {
+		"vite": "5.2.10",
+		"@types/node": "22.10.2"
 	},
 	"exports": {
 		"./vite": {

@@ -5,9 +5,9 @@
 	"scripts": {
 		"install:deps": "pnpm install && pnpm -r install",
 		"clean": "./clean.js",
-		"predev": "pnpm --filter react-micro-frontend-common build",
+		"predev": "pnpm --filter vite-microfrontend build",
 		"dev": "pnpm -r --workspace-concurrency=10 dev",
-		"prebuild": "pnpm --filter react-micro-frontend-common build",
+		"prebuild": "pnpm --filter vite-microfrontend build",
 		"build": "pnpm -r --workspace-concurrency=10 build",
 		"deploy": "pnpm -r --workspace-concurrency=10 deploy",
 		"preview": "pnpm -r --workspace-concurrency=10 preview",

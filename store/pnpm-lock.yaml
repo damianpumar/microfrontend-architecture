@@ -17,9 +17,6 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@module-federation/vite':
-        specifier: 1.1.9
-        version: 1.1.9(rollup@4.19.1)
       '@types/react':
         specifier: 18.2.79
         version: 18.2.79
@@ -28,16 +25,16 @@ importers:
         version: 18.2.25
       '@vitejs/plugin-react':
         specifier: 4.2.1
-        version: 4.2.1(vite@5.2.10(@types/node@18.19.42))
+        version: 4.2.1(vite@5.2.10(@types/node@22.10.2))
       typescript:
         specifier: 5.4.5
         version: 5.4.5
       vite:
         specifier: 5.2.10
-        version: 5.2.10(@types/node@18.19.42)
+        version: 5.2.10(@types/node@22.10.2)
       vite-microfrontend:
-        specifier: 0.0.4
-        version: 0.0.4(@types/node@18.19.42)(rollup@4.19.1)
+        specifier: 0.0.8
+        version: 0.0.8(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2))
 
 packages:
   '@ampproject/remapping@2.3.0':
@@ -403,8 +400,8 @@ packages:
   '@types/estree@1.0.5':
     resolution: { integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw== }
 
-  '@types/node@18.19.42':
-    resolution: { integrity: sha512-d2ZFc/3lnK2YCYhos8iaNIYu9Vfhr92nHiyJHRltXWjXUBjEE+A4I58Tdbnw4VhggSW+2j5y5gTrLs4biNnubg== }
+  '@types/node@22.10.2':
+    resolution: { integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ== }
 
   '@types/prop-types@15.7.12':
     resolution: { integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q== }
@@ -603,8 +600,8 @@ packages:
     engines: { node: '>=14.17' }
     hasBin: true
 
-  undici-types@5.26.5:
-    resolution: { integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA== }
+  undici-types@6.20.0:
+    resolution: { integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg== }
 
   update-browserslist-db@1.1.0:
     resolution: { integrity: sha512-EdRAaAyk2cUE1wOf2DkEhzxqOQvFOoRJFNS6NeyJ01Gp2beMRpBAINjM2iDXE3KCuKhwnvHIQCJm6ThL2Z+HzQ== }
@@ -612,8 +609,11 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  vite-microfrontend@0.0.4:
-    resolution: { integrity: sha512-rrox77gJiKPDe2N8Qg+UI7Js5HVfXmvnzmU87GywFVH7QhVU/e4j7kMxhsZTKEmQlUlBcKDD5Llh09xaMaJ2PQ== }
+  vite-microfrontend@0.0.8:
+    resolution: { integrity: sha512-JYxwy9QHP6W2RvSkSLv5K5/1VcYBNZRcFxEFOiASVMZ+AmDlTLlTEtasbgv8a8Tr03GkiHz5v4+Lgu3tUNqMxg== }
+    peerDependencies:
+      '@types/node': 22.10.2
+      vite: 5.2.10
 
   vite@5.2.10:
     resolution: { integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw== }
@@ -963,10 +963,9 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/node@18.19.42':
+  '@types/node@22.10.2':
     dependencies:
-      undici-types: 5.26.5
-    optional: true
+      undici-types: 6.20.0
 
   '@types/prop-types@15.7.12': {}
 
@@ -979,14 +978,14 @@ snapshots:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
 
-  '@vitejs/plugin-react@4.2.1(vite@5.2.10(@types/node@18.19.42))':
+  '@vitejs/plugin-react@4.2.1(vite@5.2.10(@types/node@22.10.2))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-source': 7.24.7(@babel/core@7.25.2)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.10(@types/node@18.19.42)
+      vite: 5.2.10(@types/node@22.10.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -1161,8 +1160,7 @@ snapshots:
 
   typescript@5.4.5: {}
 
-  undici-types@5.26.5:
-    optional: true
+  undici-types@6.20.0: {}
 
   update-browserslist-db@1.1.0(browserslist@4.23.2):
     dependencies:
@@ -1170,27 +1168,21 @@ snapshots:
       escalade: 3.1.2
       picocolors: 1.0.1
 
-  vite-microfrontend@0.0.4(@types/node@18.19.42)(rollup@4.19.1):
+  vite-microfrontend@0.0.8(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2)):
     dependencies:
       '@module-federation/vite': 1.1.9(rollup@4.19.1)
-      vite: 5.2.10(@types/node@18.19.42)
+      '@types/node': 22.10.2
+      vite: 5.2.10(@types/node@22.10.2)
     transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
       - rollup
-      - sass
-      - stylus
-      - sugarss
-      - terser
 
-  vite@5.2.10(@types/node@18.19.42):
+  vite@5.2.10(@types/node@22.10.2):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.40
       rollup: 4.19.1
     optionalDependencies:
-      '@types/node': 18.19.42
+      '@types/node': 22.10.2
       fsevents: 2.3.3
 
   yallist@3.1.1: {}

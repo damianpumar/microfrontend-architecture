@@ -17,9 +17,6 @@ importers:
         specifier: link:../../store
         version: link:../../store
     devDependencies:
-      '@module-federation/vite':
-        specifier: 1.1.9
-        version: 1.1.9(rollup@4.19.1)
       '@types/react':
         specifier: 18.2.79
         version: 18.2.79
@@ -36,8 +33,8 @@ importers:
         specifier: 5.2.10
         version: 5.2.10(@types/node@18.19.42)
       vite-microfrontend:
-        specifier: 0.0.4
-        version: 0.0.4(@types/node@18.19.42)(rollup@4.19.1)
+        specifier: 0.0.8
+        version: 0.0.8(@types/node@18.19.42)(rollup@4.19.1)(vite@5.2.10(@types/node@18.19.42))
 
 packages:
   '@ampproject/remapping@2.3.0':
@@ -600,8 +597,11 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  vite-microfrontend@0.0.4:
-    resolution: { integrity: sha512-rrox77gJiKPDe2N8Qg+UI7Js5HVfXmvnzmU87GywFVH7QhVU/e4j7kMxhsZTKEmQlUlBcKDD5Llh09xaMaJ2PQ== }
+  vite-microfrontend@0.0.8:
+    resolution: { integrity: sha512-JYxwy9QHP6W2RvSkSLv5K5/1VcYBNZRcFxEFOiASVMZ+AmDlTLlTEtasbgv8a8Tr03GkiHz5v4+Lgu3tUNqMxg== }
+    peerDependencies:
+      '@types/node': 22.10.2
+      vite: 5.2.10
 
   vite@5.2.10:
     resolution: { integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw== }
@@ -954,7 +954,6 @@ snapshots:
   '@types/node@18.19.42':
     dependencies:
       undici-types: 5.26.5
-    optional: true
 
   '@types/prop-types@15.7.12': {}
 
@@ -1144,8 +1143,7 @@ snapshots:
 
   typescript@5.4.5: {}
 
-  undici-types@5.26.5:
-    optional: true
+  undici-types@5.26.5: {}
 
   update-browserslist-db@1.1.0(browserslist@4.23.2):
     dependencies:
@@ -1153,19 +1151,13 @@ snapshots:
       escalade: 3.1.2
       picocolors: 1.0.1
 
-  vite-microfrontend@0.0.4(@types/node@18.19.42)(rollup@4.19.1):
+  vite-microfrontend@0.0.8(@types/node@18.19.42)(rollup@4.19.1)(vite@5.2.10(@types/node@18.19.42)):
     dependencies:
       '@module-federation/vite': 1.1.9(rollup@4.19.1)
+      '@types/node': 18.19.42
       vite: 5.2.10(@types/node@18.19.42)
     transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
       - rollup
-      - sass
-      - stylus
-      - sugarss
-      - terser
 
   vite@5.2.10(@types/node@18.19.42):
     dependencies:

@@ -1,23 +1,13 @@
-import { defineConfig } from 'vite';
-
 import react from '@vitejs/plugin-react';
 
-import { defineCommonConfig, federation } from 'vite-microfrontend/vite';
+import { defineConfig } from 'vite-microfrontend/vite';
 
-export default defineConfig(({ mode }) => {
-	const { base } = defineCommonConfig(mode);
-
-	return {
-		...base,
-		plugins: [
-			federation({
-				mode,
-				name: 'user',
-				exposes: {
-					'./user': './src/components/User.tsx',
-				},
-			}),
-			react(),
-		],
-	};
+export default defineConfig({
+	federation: {
+		name: 'user',
+		exposes: {
+			'./user': './src/components/User.tsx',
+		},
+	},
+	plugins: [react()],
 });
