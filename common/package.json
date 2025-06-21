@@ -7,14 +7,14 @@
 	},
 	"dependencies": {
 		"@module-federation/vite": "1.1.9",
-		"vite": "5.2.10"
+		"vite": "5.4.19"
 	},
 	"devDependencies": {
 		"@types/node": "22.10.2",
 		"typescript": "5.4.5"
 	},
 	"peerDependencies": {
-		"vite": "5.2.10",
+		"vite": "5.4.19",
 		"@types/node": "22.10.2"
 	},
 	"exports": {
