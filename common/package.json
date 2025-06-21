@@ -1,6 +1,6 @@
 {
 	"name": "vite-microfrontend",
-	"version": "0.0.8",
+	"version": "0.0.10",
 	"type": "module",
 	"scripts": {
 		"build": "tsc"
@@ -18,15 +18,15 @@
 		"@types/node": "22.10.2"
 	},
 	"exports": {
-		"./vite": {
-			"types": "./dist/vite.d.ts",
-			"import": "./dist/vite.js"
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
 		}
 	},
 	"typesVersions": {
 		"*": {
 			"types": [
-				"./dist/vite.d.ts"
+				"./dist/index.d.ts"
 			]
 		}
 	}

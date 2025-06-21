@@ -33,8 +33,8 @@ importers:
         specifier: 5.2.10
         version: 5.2.10(@types/node@22.10.2)
       vite-microfrontend:
-        specifier: 0.0.8
-        version: 0.0.8(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2))
+        specifier: 0.0.10
+        version: 0.0.10(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2))
 
 packages:
   '@ampproject/remapping@2.3.0':
@@ -609,8 +609,8 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  vite-microfrontend@0.0.8:
-    resolution: { integrity: sha512-JYxwy9QHP6W2RvSkSLv5K5/1VcYBNZRcFxEFOiASVMZ+AmDlTLlTEtasbgv8a8Tr03GkiHz5v4+Lgu3tUNqMxg== }
+  vite-microfrontend@0.0.10:
+    resolution: { integrity: sha512-s/y54yNxt2Mtngrl8CsedrG98106M3h2PTo9Xxp2D5rTDsqhMDFEr6vr9XNSh1yfh5xOZFfyCtJTmp01UFELcw== }
     peerDependencies:
       '@types/node': 22.10.2
       vite: 5.2.10
@@ -1168,7 +1168,7 @@ snapshots:
       escalade: 3.1.2
       picocolors: 1.0.1
 
-  vite-microfrontend@0.0.8(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2)):
+  vite-microfrontend@0.0.10(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2)):
     dependencies:
       '@module-federation/vite': 1.1.9(rollup@4.19.1)
       '@types/node': 22.10.2

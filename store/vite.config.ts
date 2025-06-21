@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react';
 
-import { defineConfig } from 'vite-microfrontend/vite';
+import { defineConfig } from 'vite-microfrontend';
 
 export default defineConfig({
 	federation: {
