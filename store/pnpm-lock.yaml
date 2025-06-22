@@ -33,8 +33,8 @@ importers:
         specifier: 5.2.10
         version: 5.2.10(@types/node@22.10.2)
       vite-microfrontend:
-        specifier: 0.0.10
-        version: 0.0.10(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2))
+        specifier: 0.0.11
+        version: 0.0.11(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2))
 
 packages:
   '@ampproject/remapping@2.3.0':
@@ -293,8 +293,8 @@ packages:
   '@module-federation/sdk@0.8.0':
     resolution: { integrity: sha512-V2cNGO//sWCyHTaQ0iTcoslolqVgdBIBOkZVLyk9AkZ4B3CO49pe/TmIIaVs9jVg3GO+ZmmazBFKRkqdn2PdRg== }
 
-  '@module-federation/vite@1.1.9':
-    resolution: { integrity: sha512-gUo/uV8ZlHTLJjgKy02lXb7zo9auqOIt5Ozw1ewP9vkMrNQVEm4ZxmZ7P+k8Rb9O2PjfdHOLRuHfNmXHmywzUw== }
+  '@module-federation/vite@1.5.0':
+    resolution: { integrity: sha512-u+fNbqd92EkeOanf0Nd1brlnJsPRtyz+EbONrsAcANLthoRpalGQKejo6k4ks4Ytye1ho7WKEe0iCTW1+8pDsQ== }
 
   '@rollup/pluginutils@5.1.0':
     resolution: { integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g== }
@@ -609,11 +609,11 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  vite-microfrontend@0.0.10:
-    resolution: { integrity: sha512-s/y54yNxt2Mtngrl8CsedrG98106M3h2PTo9Xxp2D5rTDsqhMDFEr6vr9XNSh1yfh5xOZFfyCtJTmp01UFELcw== }
+  vite-microfrontend@0.0.11:
+    resolution: { integrity: sha512-iiEpYZ66iaW77ATp7JstB9gP+WID1rYBwOwWy+JCOOa1o7dAuG/mQ7/GWWuFwegp9D35O1KD4JPBq7o/ogqXQA== }
     peerDependencies:
-      '@types/node': 22.10.2
-      vite: 5.2.10
+      '@types/node': 24.0.3
+      vite: 6.3.5
 
   vite@5.2.10:
     resolution: { integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw== }
@@ -873,7 +873,7 @@ snapshots:
     dependencies:
       isomorphic-rslog: 0.0.6
 
-  '@module-federation/vite@1.1.9(rollup@4.19.1)':
+  '@module-federation/vite@1.5.0(rollup@4.19.1)':
     dependencies:
       '@module-federation/runtime': 0.8.0
       '@rollup/pluginutils': 5.1.0(rollup@4.19.1)
@@ -1168,9 +1168,9 @@ snapshots:
       escalade: 3.1.2
       picocolors: 1.0.1
 
-  vite-microfrontend@0.0.10(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2)):
+  vite-microfrontend@0.0.11(@types/node@22.10.2)(rollup@4.19.1)(vite@5.2.10(@types/node@22.10.2)):
     dependencies:
-      '@module-federation/vite': 1.1.9(rollup@4.19.1)
+      '@module-federation/vite': 1.5.0(rollup@4.19.1)
       '@types/node': 22.10.2
       vite: 5.2.10(@types/node@22.10.2)
     transitivePeerDependencies:

@@ -16,7 +16,7 @@
 		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
-		"vite-microfrontend": "0.0.10",
+		"vite-microfrontend": "0.0.11",
 		"@types/react": "18.2.79",
 		"@types/react-dom": "18.2.25",
 		"@vitejs/plugin-react": "4.2.1",
