@@ -12,12 +12,12 @@
 	},
 	"dependencies": {
 		"jotai": "^2.11.0",
-		"react": "^18.3.1",
+		"react": "^19.0.0",
 		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
 		"vite-microfrontend": "0.0.11",
-		"@types/react": "18.2.79",
+		"@types/react": "19.1.8",
 		"@types/react-dom": "18.2.25",
 		"@vitejs/plugin-react": "4.2.1",
 		"typescript": "5.4.5",
