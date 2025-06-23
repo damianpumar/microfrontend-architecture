@@ -13,12 +13,8 @@
 		"moduleResolution": "nodenext",
 		"baseUrl": ".",
 		"declaration": true,
-		"outDir": "./dist"
+		"outDir": "./dist",
+		"composite": true
 	},
-	"include": ["src"],
-	"references": [
-		{
-			"path": "./tsconfig.node.json"
-		}
-	]
+	"include": ["src"]
 }
