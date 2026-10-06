@@ -20,6 +20,6 @@
 	"devDependencies": {
 		"husky": "^9.1.7",
 		"prettier": "^3.5.3",
-		"vite": "6.3.5"
+		"vite": "6.4.3"
 	}
 }
